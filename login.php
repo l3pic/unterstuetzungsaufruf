@@ -21,13 +21,15 @@ $password = $_POST['password'];
 $filename =  $_POST['filename'];
 
  // Prepare and execute the SQL query to get the user's password from the database
-$query = "SELECT password FROM unterstuetzer WHERE email = '$email'";
+$query = "SELECT * FROM unterstuetzer WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         $hashed_password = $row["password"];
+        $name = $row["name"];
+        $vorname = $row["vorname"];
     }
 }
  
@@ -35,6 +37,8 @@ if (mysqli_num_rows($result) > 0) {
 if ($password == $hashed_password) {
    $_SESSION['logged_in'] = true;
    $_SESSION['email'] = $email;
+   $_SESSION['name'] = $name;
+   $_SESSION['vorname'] = $vorname;
    $_SESSION['login_error'] = "";
    
    // Zurück zur Seite auf der sich angemeldet wurde
@@ -42,7 +46,7 @@ if ($password == $hashed_password) {
    exit;
  } else {
    $_SESSION['logged_in'] = false;
-   $_SESSION['login_error'] = 'The username or password is incorrect. Please try again.';
+   $_SESSION['login_error'] = 'Der Benutzername oder das Passwort sind falsch. Bitte erneut versuchen.';
 
    // Zurück zur Seite auf der sich angemeldet wurde
    header('Location: ' . $filename);

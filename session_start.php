@@ -5,5 +5,7 @@
         $_SESSION['email'] = '';
         $_SESSION['login_error'] = '';
         $_SESSION['register_error'] = '';
+        $_SESSION['name'] = '';
+        $_SESSION['vorname'] = '';
     }
 ?>

@@ -41,7 +41,7 @@
 
             <h2>Zugang zu und Korrektur von Informationen</h2>
 
-            <span>Nutzer haben das Recht, auf ihre personenbezogenen Informationen zuzugreifen und Unrichtigkeiten zu korrigieren. Wenn Sie auf Ihre personenbezogenen Informationen zugreifen oder diese korrigieren möchten, wenden Sie sich bitte an privacy@nevsub.org.</span>
+            <span>Nutzer haben das Recht, auf ihre personenbezogenen Informationen zuzugreifen und Unrichtigkeiten zu korrigieren. Wenn Sie auf Ihre personenbezogenen Informationen zugreifen oder diese korrigieren möchten, wenden Sie sich bitte an <a class="mail" href="mailto:privacy@nevsub.org">privacy@nevsub.org<a>.</span>
 
             <h2>Änderungen an dieser Datenschutzbestimmung</h2>
 

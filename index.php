@@ -13,10 +13,14 @@
     <?php include 'session_start.php';?>
     <?php include 'header.php'; ?>
     <div class="main">
-        <div class="main-ueberuns">
-            <h1 onclick="window.location.href='./ueber-uns.php'">Über uns</h1>
-            <h1>test</h1>
-        </div>
+        <div class="main-grid">
+            <div class="main-grid-2x grid-ueberuns">
+                <h1 onclick="window.location.href='./ueber-uns.php'">Über uns</h1>
+            </div>
+            <div class="main-grid-1x grid-projekte">
+                <h1 onclick="window.location.href='./projekte.php'">Projekte</h1>
+            </div>
+        </div>    
     </div>
     <?php include 'footer.php'; ?>
 </body>

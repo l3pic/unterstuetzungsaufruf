@@ -1,5 +1,7 @@
 # unterstuetzungsaufruf
 
+Diese Seite ist erreichbar über https://www.lkr-nextcloud-home.de/sites/unterstuetzungsaufruf/
+
 INFOS
 
 Für die Seite habe ich mir eine Fiktive Stiftung ausgedacht. 

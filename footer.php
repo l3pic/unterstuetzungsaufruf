@@ -15,7 +15,7 @@
     </div>
     <div class="f-kontakt f-info">
         <a>Kontakt</a>
-        <span>Tel. Nr.: 01575-4696781</span>
-        <span>E-Mail: <a class="mail" href="mailto:leonard.dettmann@gmail.com">leonard.dettmann@gmail.com<a></span>
+        <span>Tel. Nr.: +49 (0) 123 456789</span>
+        <span>E-Mail: <a class="mail" href="mailto:info@nevsub.org">info@nevsub.org<a></span>
     </div>
 </footer>

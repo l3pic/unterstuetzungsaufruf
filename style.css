@@ -256,6 +256,10 @@ header {
   border-style: solid;
   border-width: 2px;
   transition: .5s;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 .main-grid h1:hover {
@@ -268,6 +272,25 @@ header {
   padding: 20px;
   font-size: 18px;
   align-items: start;
+}
+
+.grid-news-btn {
+  background: url(./bilder/news.png) no-repeat center / cover;
+}
+
+.grid-news-text {
+  background: #3d3d45;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  color: white;
+}
+
+.grid-news-text span {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -321,6 +344,26 @@ header {
 .form-spenden-btn:hover {
   background: #4c84d16a;
 }
+
+.projekte-error {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  border: #4c83d1;
+  border-style: solid;
+  border-width: 3px;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  top: 120px;
+  z-index: 1;
+  opacity: 90%;
+}
+
+/* ------------------------------------------------------------------------- */
 
 .main-spenden {
   display: flex;
@@ -400,6 +443,27 @@ header {
   border-top-width: 5px;
   padding-top: 10px;
   margin-top: 10px;
+}
+/* ------------------------------------------------------------------------- */
+
+.main-spendentext {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-spendentext img {
+  height: 200px;
+  width: 200px;
+}
+
+.main-spendentext h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main-spendentext span {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Footer ---------------------------------------------------------- Footer */

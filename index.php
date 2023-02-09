@@ -29,6 +29,15 @@
             <div class="main-grid-1x grid-projekte">
                 <h1 onclick="window.location.href='./projekte.php'">Projekte</h1>
             </div>
+            <div class="main-grid-1x grid-news-btn" id="grid_news_btn">
+                <h1 id="news_btn">News</h1>
+            </div>
+            <div class="main-grid-1x grid-news-text hide" id="grid_news_text">
+                <span>In den letzten Monaten haben wir erfolgreich mehrere Projekte finanziert, darunter den Bau eines Gemeindezentrums in Afrika und die Bereitstellung von sauberem Trinkwasser für ein Dorf in Südamerika.</span>
+                <span>Wir sind stolz auf alles, was wir erreicht haben und können es kaum erwarten, unsere Arbeit fortzusetzen und noch größere Auswirkungen zu haben.</span>
+                <span>Wir danken allen unseren Unterstützerinnen und Unterstützern für ihre großzügigen Spenden, ohne die dies alles nicht möglich gewesen wäre.</span>
+            </div>
+            
         </div>    
     </div>
     <?php include 'footer.php'; ?>

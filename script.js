@@ -41,9 +41,14 @@ const sachspende_auswahl_input = document.getElementById('sachspende_auswahl_inp
 const sachspende_auswahl = document.getElementById('sachspende_auswahl');
 const sachspende_error = document.getElementById('sachspende_error');
 
-
 //Projekte Seite
 const projekte_forms = document.getElementsByClassName("grid-projekt");
+const projekte_error = document.getElementById('projekte_error');
+
+//Startseite Seite
+const grid_news_btn = document.getElementById('grid_news_btn');
+const grid_news_text = document.getElementById('grid_news_text');
+const news_btn = document.getElementById('news_btn');
 
 //Boolean Variablen für die Sichtbarkeit von Anmelde- und Registrierungsformular
 
@@ -57,7 +62,7 @@ let logged_in = false;
 
 // Logged_in Boolean per AJAX request von get-logged-in.php holen
 $.ajax({
-    url: 'get-logged-in.php',
+    url: './ajax-php-files/get-logged-in.php',
     type: 'GET',
     success: function (data) {
         if (data === 'true') {
@@ -71,7 +76,7 @@ $.ajax({
 // login_error_msg string per AJAX request von get-login-error.php holen und überprüfen
 
 $.ajax({
-    url: 'get-login-error.php',
+    url: './ajax-php-files/get-login-error.php',
     type: 'GET',
     success: function (data) {
         data = data.replace(/"/g, "")
@@ -85,7 +90,7 @@ $.ajax({
 
 // register_error_msg string per AJAX request von get-register-error.php holen und überprüfen
 $.ajax({
-    url: 'get-register-error.php',
+    url: './ajax-php-files/get-register-error.php',
     type: 'GET',
     success: function (data) {
         data = data.replace(/"/g, "")
@@ -113,9 +118,21 @@ login_profile.onclick = function () {
     } else if (login_shown) {
         login_div.style.transform = "translateX(320px)";
         login_shown = false;
+        //error message löschen
+        $.ajax({
+            url: "./ajax-php-files/clear-login-error.php",
+            type: "GET"
+        });
+        login_error.innerText = "";
     } else if (register_shown) {
         register_div.style.transform = "translateX(320px)";
         register_shown = false;
+        //error message löschen
+        $.ajax({
+            url: "./ajax-php-files/clear-register-error.php",
+            type: "GET"
+        });
+        register_error.innerText = "";
     }else if (logged_in && !userinfo_shown) {
         userinfo_div.style.transform = "translateX(-320px)";
         userinfo_shown = true;
@@ -151,7 +168,7 @@ login_close_btn.onclick = function () {
     login_shown = false;
     //error message löschen
     $.ajax({
-        url: "clear-login-error.php",
+        url: "./ajax-php-files/clear-login-error.php",
         type: "GET"
     });
     login_error.innerText = "";
@@ -162,7 +179,7 @@ register_close_btn.onclick = function () {
     register_shown = false;
     //error message löschen
     $.ajax({
-        url: "clear-register-error.php",
+        url: "./ajax-php-files/clear-register-error.php",
         type: "GET"
     });
     register_error.innerText = "";
@@ -216,6 +233,21 @@ register_form.onsubmit = function (e) {
         register_error.innerText = "Passwörter stimmen nicht überein!";
         e.preventDefault();
         return;
+    }
+}
+
+//News interagierbarkeit
+if(grid_news_btn != null) {
+    news_btn.onclick = function () {
+        grid_news_btn.classList.add("hide");
+        grid_news_text.classList.remove("hide");
+    }
+}
+
+if(grid_news_text != null) {
+    grid_news_text.onclick = function () {
+        grid_news_text.classList.add("hide");
+        grid_news_btn.classList.remove("hide");
     }
 }
 
@@ -341,7 +373,15 @@ spenden_form.onsubmit = function (e) {
 //jeder projekt form einen eventlistener geben
 Array.from(projekte_forms).forEach(function (form) {
     form.onsubmit = function (e) {
-        if (!logged_in) 
-        e.preventDefault();
+        if (!logged_in) {
+            e.preventDefault();
+            if(projekte_error.classList.contains('hide')){
+                projekte_error.classList.remove("hide");
+                setTimeout(function() {
+                    projekte_error.classList.add("hide");
+                }, 3000);
+            }
+        }
     }
 });
+

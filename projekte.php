@@ -13,6 +13,9 @@
     <?php include 'session_start.php';?>
     <?php include 'header.php'; ?>
     <div class="main">
+        <div class="projekte-error hide" id="projekte_error">
+            <span>Um Spenden zu können müssen Sie angemeldet sein!</span>
+        </div>
         <div class="main-grid">
             <?php
                 $server = "localhost";
@@ -52,7 +55,8 @@
 
                 mysqli_close($conn);
             ?>
-        </div>    
+        </div>
+
     </div>
     <?php include 'footer.php'; ?>
 </body>

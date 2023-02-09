@@ -78,7 +78,7 @@
                     </div>
                     <!-- -------------------------------------------------------------------------------------------------- -->
                     <div class="spenden-betrag-auswahl" id="spenden_betrag_input">
-                        <input type="text" name="betrag-ueberweisung" placeholder="Spendenbetrag" id="spenden_betrag" class="form-input">
+                        <input type="text" name="spendenbetrag" placeholder="Spendenbetrag" id="spenden_betrag" class="form-input">
                         <span class="info-msg">Cent-Beträge sind leider nicht möglich!!!</span>
                         <span class="form-error" id="betrag_error"></span>
                     </div>

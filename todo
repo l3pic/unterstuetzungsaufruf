@@ -1,0 +1,35 @@
+- show login error message @done
+- show registration error message @done
+- spenden page php @done
+- spenden page css @done
+- spenden page javascript @done
+- spenden weiterleitung php @done
+- textformatierung
+- impressum php @done
+- wenn nicht angemeldet nicht zur spenden seite weiterleiten @done
+- kontakt link entfernen @done
+- email addressen onclick mailto öffnen @done
+- homepage add news / bilderbeschreibung / infos @done
+- homepage textfeld mit unterstützungsaufruf @done
+- Sachspenden @done
+- Auswählbare spenden @done
+- README Datei schreiben!!!
+    - texte wurden generiert
+    - für mich neue sachen wurden versucht im code zu erklären
+    - es wurden keine Templates benutzt
+    - leider nichgt objektorientiert
+    - alle auf der seite vorhandenen texte wurden von generiert
+    - die seite ist nicht für alle formate optimiert (wie z.B. Handys)
+    - alle nummern sowie email addressen sind fiktiv
+    - inspiration des namens durch https://nevensuboticstiftung.de/
+    - die social media links führen nur zu den jeweiligen hauptseiten
+    - weiteleitung zu den Bezahlungsmethoden wurde nicht eingebunden
+        - die daten werden ebenso nicht in der Datenbank gespeichert
+- betrag formatierung js erklären !!! @done
+- alles auf deutsch übersetzen
+- on close form btn fehlermeldung löschen mit ajax @done
+- social media links @done
+- projekte page fehlermeldung falls nicht angemeldet @done
+- dateien sortieren (unterordner) @done
+- fehlermeldung bei onclick-login-bild löschen @done
+- login/register/logreg fenster schließen wenn man irgendwo hinclickt

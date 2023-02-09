@@ -198,10 +198,20 @@ header {
   display: flex;
   flex-direction: column;
   z-index: 0;
+  border: #4c83d1;
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .main-text h1, .main-text h2 {
   margin-top: 10px;
+}
+
+.main-text h2 {
+  font-size: 20px;
 }
 
 .main-text span {
@@ -311,20 +321,16 @@ header {
   padding: 5px;
   height: 40px;
   z-index: 0;
-}
-
-.grid-projekt h2 {
   font-size: 30px;
 }
 
-.projekt-titles {
-  text-decoration: underline;
-}
-
 .projekt-data {
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   font-weight: bold;
+  background: #4cd184;
+  color: white;
+  padding: 5px;
 }
 
 .form-spenden-btn {
@@ -338,7 +344,6 @@ header {
   background: none;
   font-size: 20px;
   font-weight: bold;
-
 }
 
 .form-spenden-btn:hover {
@@ -363,6 +368,24 @@ header {
   opacity: 90%;
 }
 
+.prbeschreibung {
+  text-align: center;
+}
+
+.prart{
+  font-size: 25px;
+}
+
+.prdatum {
+  font-size: 20px;
+}
+/* ------------------------------------------------------------------------- */
+
+.h1-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
 /* ------------------------------------------------------------------------- */
 
 .main-spenden {
@@ -370,6 +393,32 @@ header {
   flex-direction: column;
   width: 80%;
   align-items: center;
+  margin-bottom: 10px;
+}
+
+.prname-s {
+  background: #ed7d31;
+  transform: skewY(-5deg);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  height: 40px;
+  z-index: 0;
+  font-size: 40px;
+  color: white;
+}
+
+.prart-s {
+  font-size: 25px;
+}
+
+.prbeschreibung-s {
+  width: 500px;
+  text-align: center;
+}
+
+.prdatum-s {
+  font-size: 20px;
 }
 
 .div-spenden {

@@ -41,11 +41,11 @@
                             '<form class="main-grid-1x grid-projekt" action="./spenden.php" method="post">
                                 <h2>' . $row["projektname"] . '</h2>
                                 <span class="projekt-titles">Projektart:</span>
-                                <span class="projekt-data">' . $row["projektart"] . '</span>
+                                <span class="projekt-data prart">' . $row["projektart"] . '</span>
                                 <span class="projekt-titles">Projektbeschreibung:</span>
-                                <span class="projekt-data">' . $row["projektbeschreibung"] . '</span>
+                                <span class="projekt-data prbeschreibung">' . $row["projektbeschreibung"] . '</span>
                                 <span class="projekt-titles">Fertigstellung:</span>
-                                <span class="projekt-data">' . $row["fertigstellung"] . '</span>
+                                <span class="projekt-data prdatum">' . $row["fertigstellung"] . '</span>
                                 <input type="hidden" name="projektid" value="'. $row["id"] .'" />
                                 <input type="submit" value="Spenden" class="form-spenden-btn"/>
                             </form>'

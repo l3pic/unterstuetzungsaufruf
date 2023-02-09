@@ -14,7 +14,7 @@
     <?php include 'header.php'; ?>
     <div class="main">
         <div class="main-text">
-            <h1>Über uns</h1>
+            <h1 class="h1-title">Über uns</h1>
             <span>Die Nevsub Stiftung wurde gegründet, um Bedürftigen und Gemeinden auf der ganzen Welt zu helfen. Unser Ziel ist es, durch die Finanzierung von Projekten einen positiven und nachhaltigen Einfluss auf die Gesellschaft zu haben.</span>
             <span>Wir arbeiten eng mit lokalen Gemeinden und Organisationen zusammen, um sicherzustellen, dass die Projekte, die wir unterstützen, auf die Bedürfnisse und Prioritäten der betroffenen Menschen abgestimmt sind.</span>
             <span>Wir sind davon überzeugt, dass jeder einen Beitrag zur Verbesserung unserer Welt leisten kann, und wir freuen uns, dass wir durch die Unterstützung unserer Spender und Partner in der Lage sind, tatkräftig zu helfen.</span>

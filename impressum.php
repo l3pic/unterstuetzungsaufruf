@@ -14,12 +14,12 @@
     <?php include 'header.php'; ?>
     <div class="main">
         <div class="main-text">
-            <h1>Impressum</h1>
+            <h1 class="h1-title">Impressum</h1>
 
             <h2>Nevsub Stiftung</h2>
             <span>Adresse: Musterstraße 1, 12345 Musterstadt</span>
             <span>Telefon: +49 (0) 123 456789</span>
-            <span>E-Mail: info@nevsub.org</span>
+            <span>E-Mail: <a class="mail" href="mailto:info@nevsub.org">info@nevsub.org</a></span>
 
             <h2>Vertreten durch:</h2>
             <span>John Doe (Vorsitzender)</span>

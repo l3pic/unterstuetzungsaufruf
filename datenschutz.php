@@ -14,7 +14,7 @@
     <?php include 'header.php';?>
     <div class="main">
         <div class="main-text">
-            <h1>Datenschutzbestimmung für NEVSUB</h1>
+            <h1 class="h1-title">Datenschutzbestimmung für NEVSUB</h1>
 
             <h2>Einführung</h2>
 

@@ -37,13 +37,13 @@
                     // output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
                         echo(
-                            '<h1>' . $row["projektname"] . '</h1>
+                            '<h1 class="prname-s">' . $row["projektname"] . '</h1>
                             <span class="projekt-titles">Projektart:</span>
-                            <span class="projekt-data">' . $row["projektart"] . '</span>
+                            <span class="projekt-data prart-s">' . $row["projektart"] . '</span>
                             <span class="projekt-titles">Projektbeschreibung:</span>
-                            <span class="projekt-data">' . $row["projektbeschreibung"] . '</span>
+                            <span class="projekt-data prbeschreibung-s">' . $row["projektbeschreibung"] . '</span>
                             <span class="projekt-titles">Fertigstellung:</span>
-                            <span class="projekt-data">' . $row["fertigstellung"] . '</span>'
+                            <span class="projekt-data prdatum-s">' . $row["fertigstellung"] . '</span>'
                         );
                     }
                 }

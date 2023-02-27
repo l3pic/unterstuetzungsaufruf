@@ -10,36 +10,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
-    <?php include 'session_start.php';?>
-    <?php include 'header.php'; ?>
-    <div class="main">
-        <div class="main-grid">
-            <div class="main-grid-2x grid-spendenaufruf">
-                <span>Liebe Unterstützerinnen und Unterstützer,</span><br>
-                <span>die Nevsub Stiftung setzt sich dafür ein, Bedürftigen und Gemeinden auf der ganzen Welt zu helfen. Durch die Finanzierung von wichtigen Projekten können wir einen positiven und nachhaltigen Einfluss auf die Gesellschaft haben.</span><br>
-                <span>Leider sind wir auf Spenden angewiesen, um unsere Arbeit fortzusetzen und noch größere Auswirkungen zu erzielen. Jeder Beitrag, egal wie groß oder klein, hilft uns dabei, bedürftigen Menschen zu unterstützen und eine bessere Zukunft für alle zu schaffen.</span><br>
-                <span>Wir bitten Sie deshalb um Ihre Spende. Mit Ihrer Unterstützung können wir weiterhin wichtige Projekte finanzieren und eine noch größere Auswirkung auf die Gesellschaft haben.</span><br>
-                <span>Vielen Dank im Voraus für Ihre großzügige Spende. Gemeinsam können wir eine bessere Welt schaffen.</span><br>
-                <span>Herzliche Grüße,</span>
-                <span>Euer Nevsub Stiftung Team</span>
-            </div>
-            <div class="main-grid-2x grid-ueberuns">
-                <h1 onclick="window.location.href='./ueber-uns.php'">Über uns</h1>
-            </div>
-            <div class="main-grid-1x grid-projekte">
-                <h1 onclick="window.location.href='./projekte.php'">Projekte</h1>
-            </div>
-            <div class="main-grid-1x grid-news-btn" id="grid_news_btn">
-                <h1 id="news_btn">News</h1>
-            </div>
-            <div class="main-grid-1x grid-news-text hide" id="grid_news_text">
-                <span>In den letzten Monaten haben wir erfolgreich mehrere Projekte finanziert, darunter den Bau eines Gemeindezentrums in Afrika und die Bereitstellung von sauberem Trinkwasser für ein Dorf in Südamerika.</span>
-                <span>Wir sind stolz auf alles, was wir erreicht haben und können es kaum erwarten, unsere Arbeit fortzusetzen und noch größere Auswirkungen zu haben.</span>
-                <span>Wir danken allen unseren Unterstützerinnen und Unterstützern für ihre großzügigen Spenden, ohne die dies alles nicht möglich gewesen wäre.</span>
-            </div>
+  <?php include 'session_start.php';?>
+  <?php include 'header.php'; ?>
+  <div class="main">
+    <div class="main-grid">
+      <div class="main-grid-2x grid-spendenaufruf">
+        <span>Liebe Unterstützerinnen und Unterstützer,</span><br>
+        <span>die Nevsub Stiftung setzt sich dafür ein, Bedürftigen und Gemeinden auf der ganzen Welt zu helfen. Durch die Finanzierung von wichtigen Projekten können wir einen positiven und nachhaltigen Einfluss auf die Gesellschaft haben.</span><br>
+        <span>Leider sind wir auf Spenden angewiesen, um unsere Arbeit fortzusetzen und noch größere Auswirkungen zu erzielen. Jeder Beitrag, egal wie groß oder klein, hilft uns dabei, bedürftigen Menschen zu unterstützen und eine bessere Zukunft für alle zu schaffen.</span><br>
+        <span>Wir bitten Sie deshalb um Ihre Spende. Mit Ihrer Unterstützung können wir weiterhin wichtige Projekte finanzieren und eine noch größere Auswirkung auf die Gesellschaft haben.</span><br>
+        <span>Vielen Dank im Voraus für Ihre großzügige Spende. Gemeinsam können wir eine bessere Welt schaffen.</span><br>
+        <span>Herzliche Grüße,</span>
+        <span>Euer Nevsub Stiftung Team</span>
+      </div>
+      <div class="main-grid-2x grid-ueberuns">
+        <h1 onclick="window.location.href='./ueber-uns.php'">Über uns</h1>
+      </div>
+      <div class="main-grid-1x grid-projekte">
+        <h1 onclick="window.location.href='./projekte.php'">Projekte</h1>
+      </div>
+      <div class="main-grid-1x grid-news-btn" id="grid_news_btn">
+        <h1 id="news_btn">News</h1>
+      </div>
+      <div class="main-grid-1x grid-news-text hide" id="grid_news_text">
+        <span>In den letzten Monaten haben wir erfolgreich mehrere Projekte finanziert, darunter den Bau eines Gemeindezentrums in Afrika und die Bereitstellung von sauberem Trinkwasser für ein Dorf in Südamerika.</span>
+        <span>Wir sind stolz auf alles, was wir erreicht haben und können es kaum erwarten, unsere Arbeit fortzusetzen und noch größere Auswirkungen zu haben.</span>
+        <span>Wir danken allen unseren Unterstützerinnen und Unterstützern für ihre großzügigen Spenden, ohne die dies alles nicht möglich gewesen wäre.</span>
+      </div>
             
-        </div>    
-    </div>
-    <?php include 'footer.php'; ?>
+    </div>    
+  </div>
+  <?php include 'footer.php'; ?>
 </body>
 </html>

@@ -62,44 +62,44 @@ let logged_in = false;
 
 // Logged_in Boolean per AJAX request von get-logged-in.php holen
 $.ajax({
-    url: './ajax-php-files/get-logged-in.php',
-    type: 'GET',
-    success: function (data) {
-        if (data === 'true') {
-            logged_in = true;
-        } else {
-            logged_in = false;
-        }
+  url: './ajax-php-files/get-logged-in.php',
+  type: 'GET',
+  success: function (data) {
+    if (data === 'true') {
+      logged_in = true;
+    } else {
+      logged_in = false;
     }
+  }
 });
 
 // login_error_msg string per AJAX request von get-login-error.php holen und überprüfen
 
 $.ajax({
-    url: './ajax-php-files/get-login-error.php',
-    type: 'GET',
-    success: function (data) {
-        data = data.replace(/"/g, "")
-        if(data != "") {
-            login_div.style.transform = "translateX(-320px)";
-            login_shown = true;
-            login_error.innerText = data;
-        }
+  url: './ajax-php-files/get-login-error.php',
+  type: 'GET',
+  success: function (data) {
+    data = data.replace(/"/g, "")
+    if(data != "") {
+      login_div.style.transform = "translateX(-320px)";
+      login_shown = true;
+      login_error.innerText = data;
     }
+  }
 }); 
 
 // register_error_msg string per AJAX request von get-register-error.php holen und überprüfen
 $.ajax({
-    url: './ajax-php-files/get-register-error.php',
-    type: 'GET',
-    success: function (data) {
-        data = data.replace(/"/g, "")
-        if(data != "") {
-            register_div.style.transform = "translateX(-320px)";
-            register_shown = true;
-            register_error.innerText = data;
-        }
+  url: './ajax-php-files/get-register-error.php',
+  type: 'GET',
+  success: function (data) {
+    data = data.replace(/"/g, "")
+    if(data != "") {
+      register_div.style.transform = "translateX(-320px)";
+      register_shown = true;
+      register_error.innerText = data;
     }
+  }
 });
 
 //Erklärung .replace(/"/g, "")
@@ -109,85 +109,85 @@ $.ajax({
 //Öffne Anmeldeformular Buttons
 
 login_profile.onclick = function () {
-    if(!logreg_shown && !login_shown && !register_shown && !logged_in) {
-        logreg_div.style.transform = "translateX(-320px)";
-        logreg_shown = true;
-    } else if (logreg_shown) {
-        logreg_div.style.transform = "translateX(320px)";
-        logreg_shown = false;
-    } else if (login_shown) {
-        login_div.style.transform = "translateX(320px)";
-        login_shown = false;
-        //error message löschen
-        $.ajax({
-            url: "./ajax-php-files/clear-login-error.php",
-            type: "GET"
-        });
-        login_error.innerText = "";
-    } else if (register_shown) {
-        register_div.style.transform = "translateX(320px)";
-        register_shown = false;
-        //error message löschen
-        $.ajax({
-            url: "./ajax-php-files/clear-register-error.php",
-            type: "GET"
-        });
-        register_error.innerText = "";
-    }else if (logged_in && !userinfo_shown) {
-        userinfo_div.style.transform = "translateX(-320px)";
-        userinfo_shown = true;
-    } else if (logged_in && userinfo_shown) {
-        userinfo_div.style.transform = "translateX(320px)";
-        userinfo_shown = false;
-    }
+  if(!logreg_shown && !login_shown && !register_shown && !logged_in) {
+    logreg_div.style.transform = "translateX(-320px)";
+    logreg_shown = true;
+  } else if (logreg_shown) {
+    logreg_div.style.transform = "translateX(320px)";
+    logreg_shown = false;
+  } else if (login_shown) {
+    login_div.style.transform = "translateX(320px)";
+    login_shown = false;
+    //error message löschen
+    $.ajax({
+      url: "./ajax-php-files/clear-login-error.php",
+      type: "GET"
+    });
+    login_error.innerText = "";
+  } else if (register_shown) {
+    register_div.style.transform = "translateX(320px)";
+    register_shown = false;
+    //error message löschen
+    $.ajax({
+      url: "./ajax-php-files/clear-register-error.php",
+      type: "GET"
+    });
+    register_error.innerText = "";
+  }else if (logged_in && !userinfo_shown) {
+    userinfo_div.style.transform = "translateX(-320px)";
+    userinfo_shown = true;
+  } else if (logged_in && userinfo_shown) {
+    userinfo_div.style.transform = "translateX(320px)";
+    userinfo_shown = false;
+  }
 }
 
 login_btn.onclick = function () {
-    logreg_div.style.transform = "translateX(320px)";
-    logreg_shown = false;
-    login_div.style.transform = "translateX(-320px)";
-    login_shown = true;
+  logreg_div.style.transform = "translateX(320px)";
+  logreg_shown = false;
+  login_div.style.transform = "translateX(-320px)";
+  login_shown = true;
 }
 
 register_btn.onclick = function () {
-    logreg_div.style.transform = "translateX(320px)";
-    logreg_shown = false;
-    register_div.style.transform = "translateX(-320px)";
-    register_shown = true;
+  logreg_div.style.transform = "translateX(320px)";
+  logreg_shown = false;
+  register_div.style.transform = "translateX(-320px)";
+  register_shown = true;
 }
 
 //Buttons zum Schließen von Anmelde- und Registrierungsformular
 
 logreg_close_btn.onclick = function () {
-    logreg_div.style.transform = "translateX(320px)";
-    logreg_shown = false;
+  logreg_div.style.transform = "translateX(320px)";
+  logreg_shown = false;
 }
 
 login_close_btn.onclick = function () {
-    login_div.style.transform = "translateX(320px)";
-    login_shown = false;
-    //error message löschen
-    $.ajax({
-        url: "./ajax-php-files/clear-login-error.php",
-        type: "GET"
-    });
-    login_error.innerText = "";
+  login_div.style.transform = "translateX(320px)";
+  login_shown = false;
+  //error message löschen
+  $.ajax({
+    url: "./ajax-php-files/clear-login-error.php",
+    type: "GET"
+  });
+  login_error.innerText = "";
 }
 
 register_close_btn.onclick = function () {
-    register_div.style.transform = "translateX(320px)";
-    register_shown = false;
-    //error message löschen
-    $.ajax({
-        url: "./ajax-php-files/clear-register-error.php",
-        type: "GET"
-    });
-    register_error.innerText = "";
+  register_div.style.transform = "translateX(320px)";
+  register_shown = false;
+  //error message löschen
+  $.ajax({
+    url: "./ajax-php-files/clear-register-error.php",
+    type: "GET"
+  });
+  register_error.innerText = "";
 }
 
 userinfo_close_btn.onclick = function () {
-    userinfo_div.style.transform = "translateX(320px)";
-    userinfo_shown = false;
+  userinfo_div.style.transform = "translateX(320px)";
+  userinfo_shown = false;
 }
 
 //Überprüfen der Eingabefelder Login und Registrierung
@@ -196,149 +196,149 @@ userinfo_close_btn.onclick = function () {
 // Erklärung des expression patterns https://docs.google.com/document/d/1bnZIgZ-Teiny_rbmg3k02HNDTIsMM4v9BWy9K3Gny-c/edit?usp=sharing
 
 function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 }
 
 login_form.onsubmit = function (e) {
-    let input = document.getElementById('login_email').value;
-    if (!validateEmail(input)) {
-        login_error.innerText = "E-Mail-Adresse nicht gültig!";
-        e.preventDefault();
-        return;
-    } 
-    
-    if (login_pass.value.length < 5) {
-        login_error.innerText = "Passwort muss mindestens 5 Zeichen lang sein!";
-        e.preventDefault();
-        return;
-    }
+  let input = document.getElementById('login_email').value;
+  if (!validateEmail(input)) {
+    login_error.innerText = "E-Mail-Adresse nicht gültig!";
+    e.preventDefault();
+    return;
+  } 
+   
+  if (login_pass.value.length < 5) {
+    login_error.innerText = "Passwort muss mindestens 5 Zeichen lang sein!";
+    e.preventDefault();
+    return;
+  }
 }
 
 register_form.onsubmit = function (e) {
-    let input = document.getElementById('register_email').value;
-    if (!validateEmail(input)) {
-        register_error.innerText = "E-Mail-Adresse nicht gültig!";
-        e.preventDefault();
-        return;
-    }
+  let input = document.getElementById('register_email').value;
+  if (!validateEmail(input)) {
+    register_error.innerText = "E-Mail-Adresse nicht gültig!";
+    e.preventDefault();
+    return;
+  }
 
-    if (register_pass.value.length < 5) {
-        register_error.innerText = "Passwort muss mindestens 5 Zeichen lang sein!";
-        e.preventDefault();
-        return;
-    }
+  if (register_pass.value.length < 5) {
+    register_error.innerText = "Passwort muss mindestens 5 Zeichen lang sein!";
+    e.preventDefault();
+    return;
+  }
 
-    if (register_pass.value !== register_confirm_pass.value) {
-        register_error.innerText = "Passwörter stimmen nicht überein!";
-        e.preventDefault();
-        return;
-    }
+  if (register_pass.value !== register_confirm_pass.value) {
+    register_error.innerText = "Passwörter stimmen nicht überein!";
+    e.preventDefault();
+    return;
+  }
 }
 
 //News interagierbarkeit
 if(grid_news_btn != null) {
-    news_btn.onclick = function () {
-        grid_news_btn.classList.add("hide");
-        grid_news_text.classList.remove("hide");
-    }
+  news_btn.onclick = function () {
+    grid_news_btn.classList.add("hide");
+    grid_news_text.classList.remove("hide");
+  }
 }
 
 if(grid_news_text != null) {
-    grid_news_text.onclick = function () {
-        grid_news_text.classList.add("hide");
-        grid_news_btn.classList.remove("hide");
-    }
+  grid_news_text.onclick = function () {
+    grid_news_text.classList.add("hide");
+    grid_news_btn.classList.remove("hide");
+  }
 }
 
 //Zahlungsmethoden
 if (paypal_radio != null)
 paypal_radio.onclick = function () {
-    paypal_info.classList.remove('hide');
-    spenden_betrag_input.classList.remove('hide');
+  paypal_info.classList.remove('hide');
+  spenden_betrag_input.classList.remove('hide');
     
-    if (!sachspende_auswahl_input.classList.contains('hide')) {
-        sachspende_auswahl_input.classList.add('hide');
-    }
+  if (!sachspende_auswahl_input.classList.contains('hide')) {
+    sachspende_auswahl_input.classList.add('hide');
+  }
 
-    if (!ueberweisung_info.classList.contains('hide')) {
-        ueberweisung_info.classList.add('hide');
-    }
-    if (!kartenzahlung_info.classList.contains('hide')) {
-        kartenzahlung_info.classList.add('hide');
-    }
-    if (!sachspende_info.classList.contains('hide')) {
-        sachspende_info.classList.add('hide');
-    }
+  if (!ueberweisung_info.classList.contains('hide')) {
+    ueberweisung_info.classList.add('hide');
+  }
+  if (!kartenzahlung_info.classList.contains('hide')) {
+    kartenzahlung_info.classList.add('hide');
+  }
+  if (!sachspende_info.classList.contains('hide')) {
+    sachspende_info.classList.add('hide');
+  }
 }
 
 if (kartenzahlung_radio != null)
 kartenzahlung_radio.onclick = function () {
-    kartenzahlung_info.classList.remove('hide');
-    spenden_betrag_input.classList.remove('hide');
+  kartenzahlung_info.classList.remove('hide');
+  spenden_betrag_input.classList.remove('hide');
     
-    if (!sachspende_auswahl_input.classList.contains('hide')) {
-        sachspende_auswahl_input.classList.add('hide');
-    }
+  if (!sachspende_auswahl_input.classList.contains('hide')) {
+    sachspende_auswahl_input.classList.add('hide');
+  }
 
-    if (!paypal_info.classList.contains('hide')) {
-        paypal_info.classList.add('hide');
-    }
-    if (!ueberweisung_info.classList.contains('hide')) {
-        ueberweisung_info.classList.add('hide');
-    }
-    if (!sachspende_info.classList.contains('hide')) {
-        sachspende_info.classList.add('hide');
-    }
+  if (!paypal_info.classList.contains('hide')) {
+    paypal_info.classList.add('hide');
+  }
+  if (!ueberweisung_info.classList.contains('hide')) {
+    ueberweisung_info.classList.add('hide');
+  }
+  if (!sachspende_info.classList.contains('hide')) {
+    sachspende_info.classList.add('hide');
+  }
 }
 
 if (ueberweisung_radio!= null)
 ueberweisung_radio.onclick = function () {
-    ueberweisung_info.classList.remove('hide');
-    spenden_betrag_input.classList.remove('hide');
+  ueberweisung_info.classList.remove('hide');
+  spenden_betrag_input.classList.remove('hide');
     
-    if (!sachspende_auswahl_input.classList.contains('hide')) {
-        sachspende_auswahl_input.classList.add('hide');
-    }
+  if (!sachspende_auswahl_input.classList.contains('hide')) {
+    sachspende_auswahl_input.classList.add('hide');
+  }
 
-    if (!paypal_info.classList.contains('hide')) {
-        paypal_info.classList.add('hide');
-    }
-    if (!kartenzahlung_info.classList.contains('hide')) {
-        kartenzahlung_info.classList.add('hide');
-    }
-    if (!sachspende_info.classList.contains('hide')) {
-        sachspende_info.classList.add('hide');
-    }
+  if (!paypal_info.classList.contains('hide')) {
+    paypal_info.classList.add('hide');
+  }
+  if (!kartenzahlung_info.classList.contains('hide')) {
+    kartenzahlung_info.classList.add('hide');
+  }
+  if (!sachspende_info.classList.contains('hide')) {
+    sachspende_info.classList.add('hide');
+  }
 }
 
 if (sachspende_radio!= null)
 sachspende_radio.onclick = function () {
-    sachspende_info.classList.remove('hide');
-    sachspende_auswahl_input.classList.remove('hide');
+  sachspende_info.classList.remove('hide');
+  sachspende_auswahl_input.classList.remove('hide');
 
-    if(!spenden_betrag_input.classList.contains('hide')) {
-        spenden_betrag_input.classList.add('hide');
-    }
+  if(!spenden_betrag_input.classList.contains('hide')) {
+    spenden_betrag_input.classList.add('hide');
+  }
     
-    if (!paypal_info.classList.contains('hide')) {
-        paypal_info.classList.add('hide');
-    }
-    if (!kartenzahlung_info.classList.contains('hide')) {
-        kartenzahlung_info.classList.add('hide');
-    }
-    if (!ueberweisung_info.classList.contains('hide')) {
-        ueberweisung_info.classList.add('hide');
-    }
+  if (!paypal_info.classList.contains('hide')) {
+    paypal_info.classList.add('hide');
+  }
+  if (!kartenzahlung_info.classList.contains('hide')) {
+    kartenzahlung_info.classList.add('hide');
+  }
+  if (!ueberweisung_info.classList.contains('hide')) {
+    ueberweisung_info.classList.add('hide');
+  }
 }
 
 if (spenden_betrag != null)
 spenden_betrag.addEventListener("focusout", function(e) {
-    if(spenden_betrag.value.length > 0) {
-        var value = spenden_betrag.value.replace(/\D/g, "");
-        var formattedValue = value.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-        spenden_betrag.value = formattedValue + " €";
-    }
+  if(spenden_betrag.value.length > 0) {
+    var value = spenden_betrag.value.replace(/\D/g, "");
+    var formattedValue = value.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+    spenden_betrag.value = formattedValue + " €";
+  }
 });
 
 //Erklärung .replace((\d)(?=(\d\d\d)+(?!\d)))
@@ -348,40 +348,40 @@ spenden_betrag.addEventListener("focusout", function(e) {
 
 if(spenden_form != null)
 spenden_form.onsubmit = function (e) {
-    if(!sachspende_radio.checked){
-        if(spenden_betrag.value.length <= 0) {
-            betrag_error.innerText = "Bitte geben Sie Ihren Betrag ein!";
-            e.preventDefault();
-        }
-    }else {
-        if(sachspende_auswahl.value.length <= 0) {
-            sachspende_error.innerText = "Bitte wählen Sie eine Sachspende aus oder geben Sie eine eigene Spende an";
-            e.preventDefault();
-        }
+  if(!sachspende_radio.checked){
+    if(spenden_betrag.value.length <= 0) {
+      betrag_error.innerText = "Bitte geben Sie Ihren Betrag ein!";
+      e.preventDefault();
     }
+  }else {
+    if(sachspende_auswahl.value.length <= 0) {
+      sachspende_error.innerText = "Bitte wählen Sie eine Sachspende aus oder geben Sie eine eigene Spende an";
+      e.preventDefault();
+    }
+  }
 
-    if(ueberweisung_radio.checked) {
-        if(spenden_inhaber.value.length <= 0 || spenden_iban.value.length <= 0) {
-            e.preventDefault();
-            ueberweisung_error.innerText = "Bitte alle Felder ausfüllen!";
-        }
+  if(ueberweisung_radio.checked) {
+    if(spenden_inhaber.value.length <= 0 || spenden_iban.value.length <= 0) {
+      e.preventDefault();
+      ueberweisung_error.innerText = "Bitte alle Felder ausfüllen!";
     }
+  }
 }
 
 
 //Projekte weiterleitung zur spenden seite
 //jeder projekt form einen eventlistener geben
 Array.from(projekte_forms).forEach(function (form) {
-    form.onsubmit = function (e) {
-        if (!logged_in) {
-            e.preventDefault();
-            if(projekte_error.classList.contains('hide')){
-                projekte_error.classList.remove("hide");
-                setTimeout(function() {
-                    projekte_error.classList.add("hide");
-                }, 3000);
-            }
-        }
+  form.onsubmit = function (e) {
+    if (!logged_in) {
+      e.preventDefault();
+      if(projekte_error.classList.contains('hide')){
+        projekte_error.classList.remove("hide");
+        setTimeout(function() {
+          projekte_error.classList.add("hide");
+        }, 3000);
+      }
     }
+  }
 });
 
